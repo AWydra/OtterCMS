@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>OtterCMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Arkadiusz Wydra">
     
     <!--  Bootstrap 4  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -33,33 +34,33 @@
 </head>
 
 <body>
-    <main class="w-100 d-flex justify-content-center align-items-center">
+    <main class="w-100 d-flex justify-content-center align-items-center p-2">
         <section class="form-container w-100 p-3">
-            <form action="" method="POST">
+            <form action="otter.php" method="post">
                 <div class="form-group">
-                    <label for="exampleTextarea">Heading</label>
+                    <label for="heading">Heading</label>
                     <textarea class="form-control" id="heading" name="heading" rows="2"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea">Content</label>
+                    <label for="content">Content</label>
                     <textarea class="form-control" id="content" name="content" rows="4"></textarea>
                     <small class="form-text text-muted">HTML is allowed.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea">Button</label>
+                    <label for="btn">Button</label>
                     <textarea class="form-control" id="btn" name="btn" rows="1"></textarea>
                 </div>
                 <fieldset class="form-group">
                     <legend>Promoboxes are:</legend>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="promostatus" id="enable" value="enable" checked>
+                            <input type="radio" class="form-check-input" name="status" id="enable" value="enable" checked>
                             Enabled
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="promostatus" id="disable" value="disable">
+                            <input type="radio" class="form-check-input" name="status" id="disable" value="disable">
                             Disabled
                         </label>
                     </div>
