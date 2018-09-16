@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<?php
+    
+    // Database
+    $host = "awydra.pl";
+    $username = "wydra_demo";
+    $password = "DeMo123!@";
+    $dbname = "wydra_demo";
+    
+    try
+{
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
+    $query = "SELECT heading, content, btn FROM wydra_demo";
+        
+    $data = $conn->query($query);
+        
+    foreach($data as $row){
+        $heading = $row["heading"];
+        $content = $row["content"];
+        $btn = $row["btn"];
+    }
+}
+catch (PDOException $e)
+{
+    //header("Location: http://awydra.pl/cms/index.php?error"); SOON
+    print "Database connect error: " . $e->getMessage() . "<br/>"; 
+    die();
+}
+    ?>
+
+
 <head>
     <meta charset="UTF-8">
     <title>OtterCMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Arkadiusz Wydra">
-    
+
     <!--  Bootstrap 4  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+
     <!--  Reset  -->
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
-    
+
     <!--  Styles  -->
     <style>
         main{
@@ -29,8 +63,8 @@
             border-radius: 10px;
         }
     </style>
-    
-    
+
+
 </head>
 
 <body>
@@ -39,16 +73,16 @@
             <form action="otter.php" method="post">
                 <div class="form-group">
                     <label for="heading">Heading</label>
-                    <textarea class="form-control" id="heading" name="heading" rows="2"></textarea>
+                    <textarea class="form-control" id="heading" name="heading" rows="2"><? echo $heading; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content" rows="4"></textarea>
+                    <textarea class="form-control" id="content" name="content" rows="4"><? echo $content; ?></textarea>
                     <small class="form-text text-muted">HTML is allowed.</small>
                 </div>
                 <div class="form-group">
                     <label for="btn">Button</label>
-                    <textarea class="form-control" id="btn" name="btn" rows="1"></textarea>
+                    <textarea class="form-control" id="btn" name="btn" rows="1"><? echo $btn; ?></textarea>
                 </div>
                 <fieldset class="form-group">
                     <legend>Promoboxes are:</legend>
