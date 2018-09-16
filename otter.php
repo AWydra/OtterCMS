@@ -1,10 +1,7 @@
 <?php
     
-    // Database
-    $host = "awydra.pl";
-    $username = "wydra_demo";
-    $password = "DeMo123!@";
-    $dbname = "wydra_demo";
+    // Database connect
+    require_once 'dbconnect.php';
 
     // Form variables
     $heading = $_POST["heading"];
