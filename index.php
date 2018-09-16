@@ -70,16 +70,16 @@ catch (PDOException $e)
             <form action="otter.php" method="post">
                 <div class="form-group">
                     <label for="heading">Heading</label>
-                    <textarea class="form-control" id="heading" name="heading" rows="2"><? echo $heading; ?></textarea>
+                    <textarea class="form-control" id="heading" name="heading" rows="2" required><? echo $heading; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content" rows="4"><? echo $content; ?></textarea>
+                    <textarea class="form-control" id="content" name="content" rows="4" required><? echo $content; ?></textarea>
                     <small class="form-text text-muted">HTML is allowed.</small>
                 </div>
                 <div class="form-group">
                     <label for="btn">Button</label>
-                    <textarea class="form-control" id="btn" name="btn" rows="1"><? echo $btn; ?></textarea>
+                    <textarea class="form-control" id="btn" name="btn" rows="1" required><? echo $btn; ?></textarea>
                 </div>
                 <fieldset class="form-group">
                     <legend>Promoboxes are:</legend>
