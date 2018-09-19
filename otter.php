@@ -8,6 +8,8 @@
     $content = $_POST["content"];
     $btn = $_POST["btn"];
     $status = $_POST["status"];
+    $date = $_POST["date"];
+    $counterstatus = $_POST["counterstatus"];
 
     try
 {
@@ -16,7 +18,7 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // UPDATE 
-    $sql = "UPDATE wydra_demo SET heading='$heading', content='$content', btn='$btn', status='$status'";
+    $sql = "UPDATE wydra_demo SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus'";
 
     // Prepare statement
     $stmt = $conn->prepare($sql);
@@ -24,14 +26,13 @@
     // execute
     $stmt->execute();
 
-    // helpful info
-    echo $stmt->rowCount() . " records UPDATED successfully";
-    //header("Location: http://awydra.pl/cms/index.php?succes"); SOON
+    //echo $stmt->rowCount() . " records UPDATED successfully";
+    header("Location: http://awydra.pl/cms/index.php?succes");
 }
 catch (PDOException $e)
 {
-    //header("Location: http://awydra.pl/cms/index.php?error"); SOON
-    print "Database connect error: " . $e->getMessage() . "<br/>"; 
+    header("Location: http://awydra.pl/cms/index.php?error");
+    //print "Database connect error: " . $e->getMessage() . "<br/>"; 
     die();
 }
 

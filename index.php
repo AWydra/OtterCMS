@@ -13,7 +13,7 @@
         
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-    $query = "SELECT heading, content, btn FROM wydra_demo";
+    $query = "SELECT heading, content, btn, date FROM $dbname";
         
     $data = $conn->query($query);
         
@@ -21,6 +21,7 @@
         $heading = $row["heading"];
         $content = $row["content"];
         $btn = $row["btn"];
+        $date = $row["date"];
     }
 }
 catch (PDOException $e)
@@ -81,17 +82,37 @@ catch (PDOException $e)
                     <label for="btn">Button</label>
                     <textarea class="form-control" id="btn" name="btn" rows="1" required><? echo $btn; ?></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="heading">Final date</label>
+                    <textarea class="form-control" id="date" name="date" rows="1" required><? echo $date; ?></textarea>
+                    <small class="form-text text-muted">&#34;YYYY, MM, DD&#34;. For example: &#34;2018, 9, 31&#34;</small>
+                </div>
                 <fieldset class="form-group">
                     <legend>Promoboxes are:</legend>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="enable" value="enable" checked>
+                            <input type="radio" class="form-check-input" name="status" id="enable" value="block" checked>
                             Enabled
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="status" id="disable" value="disable">
+                            <input type="radio" class="form-check-input" name="status" id="disable" value="none">
+                            Disabled
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <legend>Date counter is:</legend>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="counterstatus" id="counterenable" value="block" checked>
+                            Enabled
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="counterstatus" id="counterdisable" value="none">
                             Disabled
                         </label>
                     </div>
