@@ -1,5 +1,5 @@
 <?php
-    
+    session_start();
     // Database connect
     require_once 'dbconnect.php';
 
@@ -27,11 +27,12 @@
     $stmt->execute();
 
     //echo $stmt->rowCount() . " records UPDATED successfully";
-    header("Location: http://awydra.pl/cms/index.php?succes");
+	$_SESSION['logged'] = 'true';
+    header("Location: index.php");
 }
 catch (PDOException $e)
 {
-    header("Location: http://awydra.pl/cms/index.php?error");
+    header("Location: http://awydra.pl/cms/index.php");
     //print "Database connect error: " . $e->getMessage() . "<br/>"; 
     die();
 }
