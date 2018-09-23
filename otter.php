@@ -12,6 +12,10 @@
     $date = $_POST["date"];
     $counterstatus = $_POST["counterstatus"];
 
+    if ((empty($heading) && empty($content) && empty($btn) && empty($btnlink) && empty($status) && empty($date) && empty($counterstatus))){
+        header("Location: index.php");
+    } else{
+
     try
 {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -37,5 +41,5 @@ catch (PDOException $e)
     //print "Database connect error: " . $e->getMessage() . "<br/>"; 
     die();
 }
-
+}
 ?>
