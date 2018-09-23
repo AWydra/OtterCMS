@@ -15,7 +15,7 @@
         
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-    $query = "SELECT heading, content, btn, date FROM $dbname";
+    $query = "SELECT heading, content, btn, btnlink, date FROM $dbname";
         
     $data = $conn->query($query);
         
@@ -23,6 +23,7 @@
         $heading = $row["heading"];
         $content = $row["content"];
         $btn = $row["btn"];
+        $btnlink = $row["btnlink"];
         $date = $row["date"];
     }
 }
@@ -62,6 +63,10 @@ catch (PDOException $e)
             background-color: rgba(255,255,255,.9);
             border-radius: 10px;
         }
+        
+        .version{
+            text-align: right;
+        }
     </style>
 
 
@@ -73,11 +78,11 @@ catch (PDOException $e)
   
     <?
         if (isset($_SESSION['logged'])){
-			echo $_SESSION['logged'];
+			//echo $_SESSION['logged'];
             require('content.php');
         } else if ($_POST['sitepassword'] == "fastcast"){
             $_SESSION['logged'] = 'true';
-			echo $_SESSION['logged'];
+			//echo $_SESSION['logged'];
             require('content.php');
         } else if (!($_POST['sitepassword'] == "fastcast")){
             echo '
@@ -89,7 +94,9 @@ catch (PDOException $e)
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-            
+
+
+<div class="version">OtterCMS v1.0.0</div>            
             ';
 			echo $_SESSION['logged'];
         }
@@ -98,6 +105,7 @@ catch (PDOException $e)
    
         </section>
     </main>
+    
 
     <!--  Scripts  -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
