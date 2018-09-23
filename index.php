@@ -96,7 +96,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.0.0</div>            
+<div class="version">OtterCMS v1.0.1</div>            
             ';
 			echo $_SESSION['logged'];
         }
