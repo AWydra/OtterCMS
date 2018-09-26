@@ -1,7 +1,6 @@
 <div class="tab d-flex d-md-block flex-column pb-0 pb-sm-2">
   <button class="tablinks active" onclick="openCategory(event, 'promobox')">Promotion box</button>
-  <button class="tablinks" onclick="openCategory(event, 'category1')">Category1</button>
-  <button class="tablinks" onclick="openCategory(event, 'category2')">Category2</button>
+  <button class="tablinks" onclick="openCategory(event, 'banner')">Banner</button>
 </div>
 
 <div id="promobox" class="tabcontent">
@@ -64,14 +63,28 @@
 </form>
 </div>
 
-<div id="category1" class="tabcontent">
-<form action="" method="post">
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-
-<div id="category2" class="tabcontent">
-<form action="" method="post">
+<div id="banner" class="tabcontent">
+<form action="banner.php" method="post">
+   <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" name="bannercontent" rows="14" required><? echo $bannercontent; ?></textarea>
+        <small class="form-text text-muted">HTML is allowed.</small>
+    </div>
+    <fieldset class="form-group">
+            <legend>Banner is:</legend>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="bannerstatus" id="enable" value="enable" checked>
+                    Enabled
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="bannerstatus" id="disable" value="disable">
+                    Disabled
+                </label>
+            </div>
+        </fieldset>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

@@ -4,15 +4,10 @@
     require_once 'dbconnect.php';
 
     // Form variables
-    $heading = $_POST["heading"];
-    $content = $_POST["content"];
-    $btn = $_POST["btn"];
-    $btnlink = $_POST["btnlink"];
-    $status = $_POST["status"];
-    $date = $_POST["date"];
-    $counterstatus = $_POST["counterstatus"];
+    $bannercontent = $_POST["bannercontent"];
+    $bannerstatus = $_POST["bannerstatus"];
 
-    if ((empty($heading) && empty($content) && empty($btn) && empty($btnlink) && empty($status) && empty($date) && empty($counterstatus))){
+    if ((empty($bannercontent) && empty($bannerstatus))){
         header("Location: index.php");
     } else{
 
@@ -23,7 +18,7 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // UPDATE 
-    $sql = "UPDATE $dbname SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus', btnlink='$btnlink'";
+    $sql = "UPDATE $dbname SET bannercontent='$bannercontent', bannerstatus='$bannerstatus'";
 
     // Prepare statement
     $stmt = $conn->prepare($sql);

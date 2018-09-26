@@ -15,7 +15,7 @@
         
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-    $query = "SELECT heading, content, btn, btnlink, date FROM $dbname";
+    $query = "SELECT heading, content, btn, btnlink, date, bannercontent FROM $dbname";
         
     $data = $conn->query($query);
         
@@ -25,11 +25,11 @@
         $btn = $row["btn"];
         $btnlink = $row["btnlink"];
         $date = $row["date"];
+        $bannercontent = $row["bannercontent"];
     }
 }
 catch (PDOException $e)
 {
-    //header("Location: http://awydra.pl/cms/index.php?error"); SOON
     print "Database connect error: " . $e->getMessage() . "<br/>"; 
     die();
 }
@@ -81,7 +81,7 @@ catch (PDOException $e)
             outline: none;
             cursor: pointer;
             padding: 14px 16px;
-            transition: 0.3s;
+            transition: .3s;
             border-radius: 3px;
         }
 
@@ -109,6 +109,10 @@ catch (PDOException $e)
             to {
                 opacity: 1;
             }
+        }
+        
+        input, textarea{
+            resize: none;
         }
 
     </style>
@@ -141,7 +145,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.1.0</div>            
+<div class="version">OtterCMS v1.2.0</div>            
             ';
 			echo $_SESSION['logged'];
         }
