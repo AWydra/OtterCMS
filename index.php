@@ -15,20 +15,20 @@
         
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-    $query = "SELECT heading, content, btn, btnlink, date, bannercontent, status, counterstatus, bannerstatus FROM $dbname";
+    $query = "SELECT * FROM $dbname";
         
     $data = $conn->query($query);
         
-    foreach($data as $row){
-        $heading = $row["heading"];
-        $content = $row["content"];
-        $btn = $row["btn"];
-        $btnlink = $row["btnlink"];
-        $date = $row["date"];
-        $bannercontent = $row["bannercontent"];
-        $status = $row["status"];
-        $counterstatus = $row["counterstatus"];
-        $bannerstatus = $row["bannerstatus"];
+    foreach($data as $i => $row){
+        $heading[$i] = $row["heading"];
+        $content[$i] = $row["content"];
+        $btn[$i] = $row["btn"];
+        $btnlink[$i] = $row["btnlink"];
+        $date[$i] = $row["date"];
+        $bannercontent[$i] = $row["bannercontent"];
+        $status[$i] = $row["status"];
+        $counterstatus[$i] = $row["counterstatus"];
+        $bannerstatus[$i] = $row["bannerstatus"];
     }
 }
 catch (PDOException $e)
@@ -148,7 +148,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.2.1</div>            
+<div class="version">OtterCMS v1.3.0</div>            
             ';
 			echo $_SESSION['logged'];
         }
