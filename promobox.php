@@ -11,6 +11,7 @@
     $status = $_POST["status"];
     $date = $_POST["date"];
     $counterstatus = $_POST["counterstatus"];
+    $id = $_POST["id"];
 
     if ((empty($heading) && empty($content) && empty($btn) && empty($btnlink) && empty($status) && empty($date) && empty($counterstatus))){
         header("Location: index.php");
@@ -23,7 +24,7 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // UPDATE 
-    $sql = "UPDATE $dbname SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus', btnlink='$btnlink'";
+    $sql = "UPDATE $dbname SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus', btnlink='$btnlink' WHERE id=$id";
 
     // Prepare statement
     $stmt = $conn->prepare($sql);

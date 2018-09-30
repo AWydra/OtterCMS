@@ -73,7 +73,6 @@ catch (PDOException $e)
 
         .tab {
             overflow: hidden;
-            border-bottom: 1px solid #aaa;
         }
 
         /* Style the buttons that are used to open the tab content */
@@ -88,15 +87,26 @@ catch (PDOException $e)
             border-radius: 3px;
         }
 
+        @media(max-width: 767px) {
+            .tab button {
+                border-bottom: 1px solid #aaa;
+            }
+
+
+            .tab button:first-child {
+                border-top: 1px solid #aaa;
+            }
+        }
+
 
         .tab button:hover {
             background-color: #ddd;
         }
-        
+
         .tab button.active {
             background-color: #ccc;
         }
-        
+
         .tabcontent {
             display: none;
             padding: 6px 12px;
@@ -113,8 +123,9 @@ catch (PDOException $e)
                 opacity: 1;
             }
         }
-        
-        input, textarea{
+
+        input,
+        textarea {
             resize: none;
         }
 
@@ -177,7 +188,7 @@ catch (PDOException $e)
             document.getElementById(name).style.display = "block";
             evt.currentTarget.className += " active";
         }
-        
+
         document.getElementById("promobox").style.display = "block";
         //document.getElementsByClassName("tablinks").classList.add("active");
 
