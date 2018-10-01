@@ -97,6 +97,12 @@ catch (PDOException $e)
                 border-top: 1px solid #aaa;
             }
         }
+        
+        @media(min-width: 768px){
+            .tab{
+                border-bottom: 1px solid #aaa;
+            }
+        }
 
 
         .tab button:hover {
@@ -159,7 +165,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.3.0</div>            
+<div class="version">OtterCMS v1.3.1</div>            
             ';
 			echo $_SESSION['logged'];
         }
