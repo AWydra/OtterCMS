@@ -82,7 +82,7 @@
     </form>
 </div>
 <div id="app" class="tabcontent">
-    <form action="subpages/app.php" method="post">
+    <form action="promobox.php" method="post">
         <div class="form-group">
             <label for="heading">Heading</label>
             <textarea class="form-control" id="heading" name="heading" rows="2" required><? echo $heading[1]; ?></textarea>
@@ -157,7 +157,7 @@
     </form>
 </div>
 <div id="business" class="tabcontent">
-    <form action="subpages/business.php" method="post">
+    <form action="promobox.php" method="post">
         <div class="form-group">
             <label for="heading">Heading</label>
             <textarea class="form-control" id="heading" name="heading" rows="2" required><? echo $heading[2]; ?></textarea>
@@ -232,7 +232,7 @@
     </form>
 </div>
 <div id="start" class="tabcontent">
-    <form action="subpages/start.php" method="post">
+    <form action="promobox.php" method="post">
         <div class="form-group">
             <label for="heading">Heading</label>
             <textarea class="form-control" id="heading" name="heading" rows="2" required><? echo $heading[3]; ?></textarea>
