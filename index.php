@@ -11,11 +11,11 @@
     
     try
 {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
         
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
-    $query = "SELECT * FROM $dbname";
+    $query = "SELECT * FROM promobox, banner, passwd";
         
     $data = $conn->query($query);
         
@@ -29,6 +29,7 @@
         $status[$i] = $row["status"];
         $counterstatus[$i] = $row["counterstatus"];
         $bannerstatus[$i] = $row["bannerstatus"];
+        $passwd = $row["passwd"];
     }
 }
 catch (PDOException $e)
@@ -97,9 +98,9 @@ catch (PDOException $e)
                 border-top: 1px solid #aaa;
             }
         }
-        
-        @media(min-width: 768px){
-            .tab{
+
+        @media(min-width: 768px) {
+            .tab {
                 border-bottom: 1px solid #aaa;
             }
         }
@@ -144,16 +145,13 @@ catch (PDOException $e)
     <main class="w-100 d-flex justify-content-center align-items-center p-2">
 
         <section class="form-container w-100 p-3">
-
             <?
         if (isset($_SESSION['logged'])){
-			//echo $_SESSION['logged'];
             require('content.php');
-        } else if ($_POST['sitepassword'] == "fastcast"){
+        } else if (password_verify($_POST['sitepassword'], $passwd)){
             $_SESSION['logged'] = 'true';
-			//echo $_SESSION['logged'];
             require('content.php');
-        } else if (!($_POST['sitepassword'] == "fastcast")){
+        } else if (!(password_verify($_POST['sitepassword'], $passwd))){
             echo '
             
 <form action="" method="POST">
@@ -165,7 +163,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.3.2</div>            
+<div class="version">OtterCMS v1.3.3</div>            
             ';
 			echo $_SESSION['logged'];
         }

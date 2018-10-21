@@ -19,12 +19,12 @@
 
     try
 {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
         
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // UPDATE 
-    $sql = "UPDATE $dbname SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus', btnlink='$btnlink' WHERE id=$id";
+    $sql = "UPDATE promobox SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus', btnlink='$btnlink' WHERE id=$id";
 
     // Prepare statement
     $stmt = $conn->prepare($sql);
