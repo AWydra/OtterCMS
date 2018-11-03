@@ -89,8 +89,9 @@
                 <textarea class="form-control" id="btn" name="btn" rows="1" required disabled><? echo $btn[1]; ?></textarea>
             </div>
             <div class="form-group col-sm-6 mb-3 mb-md-0">
-                    <label for="imglink">Image link</label>
-                    <textarea class="form-control" id="imglink" name="imglink" rows="1" required><? echo $imglink[1]; ?></textarea>
+                    <label for="imglink1">Image link</label>
+                    <textarea class="form-control" id="imglink1" name="imglink" rows="1"><? echo $imglink[1]; ?></textarea>
+                    <small class="form-text text-muted">If you don't want to use image, leave empty</small>
                 </div>
             <div class="form-group col-sm-6 mb-3 mb-md-0">
                 <label for="heading">Final date</label>
@@ -158,8 +159,9 @@
                 <textarea class="form-control" id="btn" name="btn" rows="1" required disabled><? echo $btn[2]; ?></textarea>
             </div>
             <div class="form-group col-sm-6 mb-3 mb-md-0">
-                    <label for="imglink">Image link</label>
-                    <textarea class="form-control" id="imglink" name="imglink" rows="1" required><? echo $imglink[2]; ?></textarea>
+                    <label for="imglink2">Image link</label>
+                    <textarea class="form-control" id="imglink2" name="imglink" rows="1"><? echo $imglink[2]; ?></textarea>
+                    <small class="form-text text-muted">If you don't want to use image, leave empty</small>
                 </div>
             <div class="form-group col-sm-6 mb-3 mb-md-0">
                 <label for="heading">Final date</label>
@@ -228,8 +230,9 @@
                 <textarea class="form-control" id="btn" name="btn" rows="1" required disabled><? echo $btn[3]; ?></textarea>
             </div>
             <div class="form-group col-sm-6 mb-3 mb-md-0">
-                    <label for="imglink">Image link</label>
-                    <textarea class="form-control" id="imglink" name="imglink" rows="1" required><? echo $imglink[3]; ?></textarea>
+                    <label for="imglink3">Image link</label>
+                    <textarea class="form-control" id="imglink3" name="imglink" rows="1"><? echo $imglink[3]; ?></textarea>
+                    <small class="form-text text-muted">If you don't want to use image, leave empty</small>
                 </div>
             <div class="form-group col-sm-6 mb-3 mb-md-0">
                 <label for="heading">Final date</label>
@@ -312,8 +315,9 @@
                     <textarea class="form-control" id="btnlink" name="btnlink" rows="1" required><? echo $btnlink[4]; ?></textarea>
                 </div>
                 <div class="form-group col-sm-6 mb-3 mb-md-0">
-                    <label for="imglink">Image link</label>
-                    <textarea class="form-control" id="imglink" name="imglink" rows="1" required><? echo $imglink[4]; ?></textarea>
+                    <label for="imglink4">Image link</label>
+                    <textarea class="form-control" id="imglink4" name="imglink" rows="1"><? echo $imglink[4]; ?></textarea>
+                    <small class="form-text text-muted">If you don't want to use image, leave empty</small>
                 </div>
                 <fieldset class="form-group col-sm-6">
                     <legend>Promoboxes are:</legend>
@@ -381,8 +385,9 @@
                     <textarea class="form-control" id="btnlink" name="btnlink" rows="1" required><? echo $btnlink[5]; ?></textarea>
                 </div>
                 <div class="form-group col-sm-6 mb-3 mb-md-0">
-                    <label for="imglink">Image link</label>
-                    <textarea class="form-control" id="imglink" name="imglink" rows="1" required><? echo $imglink[5]; ?></textarea>
+                    <label for="imglink5">Image link</label>
+                    <textarea class="form-control" id="imglink5" name="imglink" rows="1"><? echo $imglink[5]; ?></textarea>
+                    <small class="form-text text-muted">If you don't want to use image, leave empty</small>
                 </div>
                 <fieldset class="form-group col-sm-6">
                     <legend>Promoboxes are:</legend>

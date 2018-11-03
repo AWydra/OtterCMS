@@ -67,7 +67,6 @@ catch (PDOException $e)
             max-width: 550px;
             background-color: rgba(255, 255, 255, .9);
             border-radius: 10px;
-            min-height: 749px;
         }
 
         .version {
@@ -166,7 +165,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.4.0</div>            
+<div class="version">OtterCMS v1.4.1</div>            
             ';
 			echo $_SESSION['logged'];
         }
