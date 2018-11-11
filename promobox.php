@@ -13,8 +13,9 @@
     $counterstatus = $_POST["counterstatus"];
     $id = $_POST["id"];
     $imglink = $_POST["imglink"];
+    $btncolor = $_POST["btncolor"];
 
-    if ((empty($heading) && empty($content) && empty($btn) && empty($btnlink) && empty($status) && empty($date) && empty($counterstatus))){
+    if ((empty($heading) && empty($content) && empty($btn) && empty($btnlink) && empty($status) && empty($btncolor) && empty($id) && empty($date) && empty($counterstatus))){
         header("Location: index.php");
     } else{
 
@@ -25,7 +26,7 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // UPDATE 
-    $sql = "UPDATE promobox SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus', btnlink='$btnlink', img='$imglink' WHERE id=$id";
+    $sql = "UPDATE promobox SET heading='$heading', content='$content', btn='$btn', status='$status', date='$date', counterstatus='$counterstatus', btnlink='$btnlink', btncolor='$btncolor', img='$imglink' WHERE id=$id";
 
     // Prepare statement
     $stmt = $conn->prepare($sql);

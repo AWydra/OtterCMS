@@ -31,6 +31,7 @@
         $bannerstatus[$i] = $row["bannerstatus"];
         $passwd = $row["passwd"];
         $imglink[$i] = $row["img"];
+        $btncolor[$i] = $row["btncolor"];
     }
 }
 catch (PDOException $e)
@@ -165,7 +166,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.4.1</div>            
+<div class="version">OtterCMS v1.5.0</div>            
             ';
 			echo $_SESSION['logged'];
         }
