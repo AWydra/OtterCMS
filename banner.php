@@ -7,7 +7,7 @@
     $bannercontent = $_POST["bannercontent"];
     $bannerstatus = $_POST["bannerstatus"];
 
-    if ((empty($bannercontent) && empty($bannerstatus))){
+    if ((empty($bannercontent) || empty($bannerstatus))){
         header("Location: index.php");
     } else{
 

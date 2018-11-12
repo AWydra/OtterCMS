@@ -15,8 +15,8 @@
     $imglink = $_POST["imglink"];
     $btncolor = $_POST["btncolor"];
 
-    if ((empty($heading) && empty($content) && empty($btn) && empty($btnlink) && empty($status) && empty($btncolor) && empty($id) && empty($date) && empty($counterstatus))){
-        header("Location: index.php");
+    if ((empty($heading) || empty($content) || empty($btn) || empty($btnlink) || empty($status) || empty($btncolor) || empty($id) || empty($date) || empty($counterstatus))){
+        header("Location: index.php?error");
     } else{
 
     try
