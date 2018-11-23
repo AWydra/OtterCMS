@@ -32,6 +32,7 @@
         $passwd = $row["passwd"];
         $imglink[$i] = $row["img"];
         $btncolor[$i] = $row["btncolor"];
+        $order[$i] = $row["porder"];
     }
 }
 catch (PDOException $e)
@@ -62,6 +63,7 @@ catch (PDOException $e)
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            background-attachment: fixed;
         }
 
         .form-container {
@@ -90,7 +92,7 @@ catch (PDOException $e)
             border-radius: 3px;
         }
 
-        @media(max-width: 767px) {
+        @media(max-width: 575px) {
             .tab button {
                 border-bottom: 1px solid #aaa;
             }
@@ -102,7 +104,7 @@ catch (PDOException $e)
             }
         }
 
-        @media(min-width: 768px) {
+        @media(min-width: 575px) {
             .tab {
                 border-bottom: 1px solid #aaa;
             }
@@ -166,7 +168,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.5.2</div>            
+<div class="version">OtterCMS v1.5.3</div>            
             ';
 			echo $_SESSION['logged'];
         }
