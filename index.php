@@ -67,7 +67,7 @@ catch (PDOException $e)
         }
 
         .form-container {
-            max-width: 550px;
+            max-width: 600px;
             background-color: rgba(255, 255, 255, .9);
             border-radius: 10px;
         }
@@ -168,7 +168,7 @@ catch (PDOException $e)
 </form>
 
 
-<div class="version">OtterCMS v1.5.3</div>            
+<div class="version">OtterCMS v1.6.0</div>            
             ';
 			echo $_SESSION['logged'];
         }
@@ -205,16 +205,88 @@ catch (PDOException $e)
     <script>
         $(document).ready(function() {
             $("#button1").click(function() {
-                $(".firstbanner").css("display", "block");
-                $(".secondbanner").css("display", "none");
+                $(".banner1").css("display", "block");
+                $(".banner2").css("display", "none");
+                $(".banner3").css("display", "none");
+                $(".banner4").css("display", "none");
+                $(".banner5").css("display", "none");
+                $(".banner6").css("display", "none");
                 $(this).css("border", "#ccc solid 2px");
                 $("#button2").css("border", "none");
+                $("#button3").css("border", "none");
+                $("#button4").css("border", "none");
+                $("#button5").css("border", "none");
+                $("#button6").css("border", "none");
             });
             $("#button2").click(function() {
-                $(".firstbanner").css("display", "none");
-                $(".secondbanner").css("display", "block");
+                $(".banner1").css("display", "none");
+                $(".banner2").css("display", "block");
+                $(".banner3").css("display", "none");
+                $(".banner4").css("display", "none");
+                $(".banner5").css("display", "none");
+                $(".banner6").css("display", "none");
                 $(this).css("border", "#ccc solid 2px");
                 $("#button1").css("border", "none");
+                $("#button3").css("border", "none");
+                $("#button4").css("border", "none");
+                $("#button5").css("border", "none");
+                $("#button6").css("border", "none");
+            });
+            $("#button3").click(function() {
+                $(".banner1").css("display", "none");
+                $(".banner2").css("display", "none");
+                $(".banner3").css("display", "block");
+                $(".banner4").css("display", "none");
+                $(".banner5").css("display", "none");
+                $(".banner6").css("display", "none");
+                $(this).css("border", "#ccc solid 2px");
+                $("#button1").css("border", "none");
+                $("#button2").css("border", "none");
+                $("#button4").css("border", "none");
+                $("#button5").css("border", "none");
+                $("#button6").css("border", "none");
+            });
+            $("#button4").click(function() {
+                $(".banner1").css("display", "none");
+                $(".banner2").css("display", "none");
+                $(".banner3").css("display", "none");
+                $(".banner4").css("display", "block");
+                $(".banner5").css("display", "none");
+                $(".banner6").css("display", "none");
+                $(this).css("border", "#ccc solid 2px");
+                $("#button1").css("border", "none");
+                $("#button2").css("border", "none");
+                $("#button3").css("border", "none");
+                $("#button5").css("border", "none");
+                $("#button6").css("border", "none");
+            });
+            $("#button5").click(function() {
+                $(".banner1").css("display", "none");
+                $(".banner2").css("display", "none");
+                $(".banner3").css("display", "none");
+                $(".banner4").css("display", "none");
+                $(".banner5").css("display", "block");
+                $(".banner6").css("display", "none");
+                $(this).css("border", "#ccc solid 2px");
+                $("#button1").css("border", "none");
+                $("#button2").css("border", "none");
+                $("#button3").css("border", "none");
+                $("#button4").css("border", "none");
+                $("#button6").css("border", "none");
+            });
+            $("#button6").click(function() {
+                $(".banner1").css("display", "none");
+                $(".banner2").css("display", "none");
+                $(".banner3").css("display", "none");
+                $(".banner4").css("display", "none");
+                $(".banner5").css("display", "none");
+                $(".banner6").css("display", "block");
+                $(this).css("border", "#ccc solid 2px");
+                $("#button1").css("border", "none");
+                $("#button2").css("border", "none");
+                $("#button3").css("border", "none");
+                $("#button4").css("border", "none");
+                $("#button5").css("border", "none");
             });
         });
 

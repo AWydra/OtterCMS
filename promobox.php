@@ -16,7 +16,7 @@
     $btncolor = $_POST["btncolor"];
     $order = $_POST["order"];
 
-    if ((empty($heading) || empty($content) || empty($status) || empty($btncolor) || empty($id) || empty($order) || empty($date) || empty($counterstatus))){
+    if ((empty($heading) || empty($content) || empty($status) || empty($btncolor) || empty($id) || empty($date) || empty($counterstatus))){
         header("Location: index.php?error");
     } else{
 
